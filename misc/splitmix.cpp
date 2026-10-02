@@ -5,12 +5,8 @@ struct SplitMix {
     x = (x ^ (x >> 27)) * 0x94d049bb133111eb;
     return x ^ (x >> 31);
   }
-  
   uint64_t operator()(uint64_t x) const {
     static const uint64_t FIXED_RANDOM = chrono::steady_clock::now().time_since_epoch().count();
     return splitmix64(x + FIXED_RANDOM);
   }
 };
-auto begin = std::chrono::high_resolution_clock::now();
-auto end = std::chrono::high_resolution_clock::now();
-auto elapsed = std::chrono::duration_cast<std::chrono::nanoseconds>(end - begin);
