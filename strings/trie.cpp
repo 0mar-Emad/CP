@@ -21,9 +21,7 @@ struct Trie {
     int u = 0;
     for (char ch : s) {
       int c = ch - 'a';
-      if (!trie[u][c]) {
-        return 0;
-      }
+      if (!trie[u][c]) return 0;
       u = trie[u][c];
     }
     return trie[u].cnt;
