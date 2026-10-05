@@ -1,4 +1,4 @@
-map<int, int> primeFact(int n) {
+auto primeFact(int n) {
   map<int, int> mp;
   for (int i = 2; i * i <= n; i++) {
     while (n % i == 0) {
