@@ -18,7 +18,7 @@ struct BinaryTrie {
       trie[node].cnt++;
     }
   }
-  void remove(int x) {
+  void erase(int x) {
     int node = 0;
     for (int i = B; i >= 0; i--) {
       int bit = x >> i & 1;
