@@ -8,11 +8,11 @@ struct Node {
   }
 };
 template<typename T, typename U, auto merge>
-struct DynamicSegTree {
+struct SegmentTree {
   int64_t n;
   vector<T> tree;
-  DynamicSegTree() {}
-  DynamicSegTree(int64_t sz) { init(sz); }
+  SegmentTree() {}
+  SegmentTree(int64_t sz) { init(sz); }
   void update(int64_t idx, U val) { update(0, 0, n - 1, idx, val); }
   T query(int64_t l, int64_t r) { return query(0, 0, n - 1, l, r); }
   void init(int64_t sz) {

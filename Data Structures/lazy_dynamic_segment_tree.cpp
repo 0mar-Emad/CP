@@ -16,12 +16,12 @@ struct Lazy {
   }
 };
 template<typename T, typename L, auto merge, auto compose, auto apply>
-struct DynamicSegTree {
+struct SegmentTree {
   int64_t n;
   vector<T> tree;
   vector<L> lazy;
-  DynamicSegTree() {}
-  DynamicSegTree(int64_t sz) { init(sz); }
+  SegmentTree() {}
+  SegmentTree(int64_t sz) { init(sz); }
   void update(int64_t lx, int64_t rx, const L &op) { update(0, 0, n - 1, lx, rx, op); }
   T query(int64_t lx, int64_t rx) { return query(0, 0, n - 1, lx, rx); }
   void init(int64_t sz) {
