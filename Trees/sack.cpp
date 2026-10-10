@@ -1,6 +1,6 @@
 const int N = 1e5 + 5;
 vector<vector<int>> adj;
-int sz[N], big[N], ans[N], col[N];
+int sz[N], big[N], ans[N], a[N];
 // what ever DS i'm using
 void pre(int u, int p) {
   sz[u] = 1;
@@ -17,7 +17,7 @@ void update(int c, int d) {
   // update logic
 }
 void add(int u, int p, int d) {
-  update(col[u], d);
+  update(a[u], d);
   for (int v : adj[u]) {
     if (v == p) continue;
     add(v, u, d);
@@ -31,7 +31,7 @@ void dfs(int u, int p, bool keep) {
   if (big[u]) {
     dfs(big[u], u, 1);
   }
-  update(col[u], 1);
+  update(a[u], 1);
   for (int v : adj[u]) {
     if (v == p || v == big[u]) continue;
     add(v, u, 1);
