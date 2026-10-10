@@ -1,6 +1,6 @@
 const int N = 1e5 + 5;
 vector<vector<int>> adj;
-int sz[N], big[N], ans[N], a[N];
+int sz[N], big[N], a[N], ans[N];
 // what ever DS i'm using
 void pre(int u, int p) {
   sz[u] = 1;
@@ -13,7 +13,7 @@ void pre(int u, int p) {
     }
   }
 }
-void update(int c, int d) {
+void update(int x, int d) {
   // update logic
 }
 void add(int u, int p, int d) {
